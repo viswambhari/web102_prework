@@ -1,75 +1,229 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
 
 body {
-    font-family: 'Cabin';
-    background-color: #758190;
+  font-family: "Cabin";
+  background-image: url("./assets/sea-monster-image.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #tentacles {
-    width: 50px;
+  width: 80px;
+  margin: 1em;
 }
 
 .header {
-    display: flex;
-    background-color: lightblue;
-    padding: 1%;
-    align-items: center;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -10px;
+  display: flex;
+  background-color: rgba(3, 1, 15, 0.85);
+  padding: 1%;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
 }
 
+.header h1 {
+  font-size: 40px;
+  color: rgb(222, 226, 245);
+  font-family: "Play", sans-serif;
+  letter-spacing: 0.05rem;
+}
+
+.sea-monster-welcome {
+  font-family: "Play", sans-serif;
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: center;
+  color: rgb(222, 226, 247);
+  margin: 0.8em;
+}
+#description-container {
+  background: rgba(3, 1, 15, 0.5);
+  margin: 2%;
+  padding: 2%;
+  border-radius: 2px;
+  text-align: center;
+}
+
+#description-container p {
+  color: rgb(200, 203, 222);
+  font-weight: lighter;
+  font-size: 19px;
+}
+
+.stats {
+  font-family: "Play", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(222, 226, 247);
+  letter-spacing: 0.11em;
+  margin: 1.5em;
+}
 .stats-container {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .stats-card {
-    background-color: #a8b0bc;
-    border-radius: 7px;
-    padding: 1%;
-    margin: 1%;
-    width: 100%;
-    text-align: center;
+  background-color: #c1c1ea85;
+  border-radius: 7px;
+  padding: 1%;
+  margin: 1%;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.stats-card h3 {
+  color: rgb(0, 0, 0);
+  font-family: "Play", sans-serif;
+  font-size: 23px;
+}
+#num-contributions,
+#total-raised,
+#num-games {
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  font-family: "Play", sans-serif;
+}
+.stats-card p {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-family: "Play", sans-serif;
 }
 
-#num-contributions, #total-raised, #num-games {
-    font-size: 50px;
+.stats-container .stats-card:hover {
+  background-color: #c1c1ead0;
+  box-shadow: 0 0 30px rgb(1, 3, 12);
+  border-radius: 7px;
+  padding: 1%;
+  margin: 1%;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.our-games {
+  font-family: "Play", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(222, 226, 247);
+  letter-spacing: 0.11em;
+  margin: 1.5em 1.5em 0.5em 1.5em;
+}
+
+.below-our-games {
+  font-size: 25px;
+  font-family: "Play", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: rgb(222, 226, 247);
+  margin: 0.5em 0.5em 1.5em 0.5em;
 }
 
 #games-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .game-img {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #FFFFFF;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgb(0, 0, 0);
 }
 
+/*.game-card {
+  background-color: #ffffff;
+  padding: 1%;
+  margin: 1%;
+  width: 300px;
+  text-align: center;
+  border-radius: 7px;
+}*/
+
 .game-card {
-    background-color: #FFFFFF;
-    padding: 1%;
-    margin: 1%;
-    width: 300px;
-    text-align: center;
-    border-radius: 7px;
+  width: 300px;
+  height: 200px;
+  padding: 2%;
+  margin: 2%;
+  perspective: 800px;
+  border-radius: 7px;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.game-card .card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  border-radius: 7px;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.game-card:hover .card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  font-family: "Play", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.back {
+  width: 300px;
+  height: 200px;
+  border-radius: 7px;
+  background-color: rgb(127, 136, 183, 0.4);
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.back p {
+  padding: 5%;
+  color: rgb(216, 215, 237);
 }
 
 .game-card:hover {
-    cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+  cursor: pointer;
 }
 
 #button-container {
-    text-align: center;
+  text-align: center;
 }
 
 button {
-    font-family: 'Cabin';
-    border: none;
-    padding: 1%;
-    margin: 1%;
-    border-radius: 7px;
+  font-family: "Cabin";
+  background-color: rgb(222, 226, 247);
+  font-weight: 600;
+  border: none;
+  padding: 1%;
+  margin: 1%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  font-family: "Cabin";
+  background-color: rgb(165, 213, 230);
+  font-weight: 600;
+  border: none;
+  padding: 1%;
+  margin: 1%;
+  border-radius: 4px;
+  cursor: pointer;
 }
